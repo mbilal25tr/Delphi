@@ -11,7 +11,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  TStyleManager.TrySetStyle('Slate Classico');
   Application.CreateForm(TRoot, Root);
   Application.Run;
 end.

@@ -2,7 +2,7 @@ object Root: TRoot
   Left = 0
   Top = 0
   Caption = 'SyncText'
-  ClientHeight = 315
+  ClientHeight = 301
   ClientWidth = 553
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,7 +18,7 @@ object Root: TRoot
   OnCreate = FormCreate
   DesignSize = (
     553
-    315)
+    301)
   PixelsPerInch = 96
   TextHeight = 13
   object MevcutDosya: TLabel
@@ -38,7 +38,7 @@ object Root: TRoot
     Left = 8
     Top = 27
     Width = 537
-    Height = 280
+    Height = 266
     Anchors = [akLeft, akTop, akRight, akBottom]
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -50,6 +50,7 @@ object Root: TRoot
     TabOrder = 0
     StyleElements = []
     OnKeyPress = EditorKeyPress
+    ExplicitHeight = 280
   end
   object TaskBar: TMainMenu
     Left = 96
@@ -92,11 +93,12 @@ object Root: TRoot
     end
   end
   object OpenDialog: TOpenDialog
-    Filter = 'Text Dosyas'#305'|*.txt|Config Dosyas'#305'|*.cfg'
+    Filter = '|*.txt||*.cfg||*.ini||*.bat||*.html||*.css'
     Left = 152
     Top = 136
   end
   object SaveDialog: TSaveDialog
+    Filter = '|*.txt||*.cfg||*.ini||*.bat||*.html||*.css'
     Left = 208
     Top = 136
   end

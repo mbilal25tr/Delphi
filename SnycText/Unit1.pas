@@ -118,6 +118,33 @@ end;
 
 procedure TRoot.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
+  case MessageDlg('Açýk olan dosyayý kaydetmek ister misin?', mtConfirmation, [mbYes, mbNo, mbCancel], 0) of
+    mrYes:
+    begin
+      if dosyaYolu <> '' then
+        begin
+          Editor.Lines.SaveToFile(dosyaYolu);
+          Application.Terminate;
+        end
+      else
+        begin
+          if SaveDialog.Execute then
+          begin
+            Editor.Lines.SaveToFile(SaveDialog.filename);
+            Application.Terminate;
+          end;
+        end;
+    end;
+    mrNo:
+    begin
+      Application.Terminate;
+    end;
+    mrCancel:
+    begin
+    end;
+  end;
+
+
   Application.Terminate;
 end;
 
