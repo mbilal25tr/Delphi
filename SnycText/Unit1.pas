@@ -118,7 +118,9 @@ end;
 
 procedure TRoot.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  case MessageDlg('Açýk olan dosyayý kaydetmek ister misin?', mtConfirmation, [mbYes, mbNo, mbCancel], 0) of
+action:= canone;
+  
+case MessageDlg('Açýk olan dosyayý kaydetmek ister misin?', mtConfirmation, [mbYes, mbNo, mbCancel], 0) of
     mrYes:
     begin
       if dosyaYolu <> '' then
